@@ -1,8 +1,7 @@
 package JavaSwing;
 
 import javax.swing.*;
-import java.awt.event.*;
-import java.util.*;
+import java.awt.*;
 
 public class ConverterGui extends JFrame {
 
@@ -13,10 +12,21 @@ public class ConverterGui extends JFrame {
     private JMenuItem option3;
 
     public ConverterGui(){
-        setSize(700, 500);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setTitle("Swing intro");
-        JPanel panel = new JPanel();
+        JFrame frame =  new JFrame();  //create the jframe obj
+
+        JPanel panel = new JPanel(); // create a panel
+        panel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50)); // set the borders of the panel (margin on
+        // css)
+        panel.setLayout(new GridLayout(4,5)); // define a layout style.
+        frame.add(panel, BorderLayout.CENTER); // add the panel to the frame.
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // set the frame to close when hit the exit button
+        setTitle("Swing intro"); // set the window title
+        frame.setVisible(true); // make it visible
+        frame.pack(); // pack makes the window big enough for fitting all the elements.
+        frame.setSize(500, 500);
+        
+
+
 
         showMenu();
         panel.add(menuBar);
@@ -35,20 +45,16 @@ public class ConverterGui extends JFrame {
 
         menuBar.add(menu);
 
-
-        option3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                JOptionPane.showMessageDialog(null , "Exiting program...");
-                System.exit(0);
-            }
+        option3.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null , "Exiting program...");
+            System.exit(0);
         });
 
     }
 
     public static void main(String[] args) {
         ConverterGui window = new ConverterGui();
-        window.setVisible(true);
+        
 
 
  
