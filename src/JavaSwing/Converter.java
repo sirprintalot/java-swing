@@ -10,7 +10,11 @@ public class Converter {
         System.out.println("OPTIONS:");
         System.out.println("1: cm to m");
         System.out.println("2: m to cm");
-        System.out.println("9: EXIT");
+        System.out.println("3: inch to cm");
+        System.out.println("4: cm to inch");
+        System.out.println("5: ft. to m");
+        System.out.println("6: m to ft.");
+        System.out.println("99: EXIT");
         System.out.println("Choose a valid option:");
         System.out.println("=================================================");
         

@@ -6,38 +6,38 @@ import java.awt.*;
 public class ConverterGui extends JFrame {
 
     private JMenuBar menuBar;
-    private JMenu menu;
-    private JMenuItem option1;   //make an array list with the options!!
-    private JMenuItem option2;
-    private JMenuItem option3;
 
     public ConverterGui(){
         JFrame frame =  new JFrame();  //create the jframe obj
-
-        JPanel panel = new JPanel(); // create a panel
-        panel.setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50)); // set the borders of the panel (margin on
-        // css)
-        panel.setLayout(new GridLayout(4,5)); // define a layout style.
-        frame.add(panel, BorderLayout.CENTER); // add the panel to the frame.
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); // set the frame to close when hit the exit button
-        setTitle("Swing intro"); // set the window title
         frame.setVisible(true); // make it visible
-        frame.pack(); // pack makes the window big enough for fitting all the elements.
         frame.setSize(500, 500);
-        
+        frame.setTitle("Converter 1.0");
+
+
+        JPanel panel1 = new JPanel(); // create a panel1
+        panel1.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10)); // set the borders of the panel1 (margin on
+        // css)
+        panel1.setLayout(new GridLayout(2,2)); // define a layout style.
+        panel1.setPreferredSize(new Dimension(100, 100));
+        panel1.add(menuBar);
+//        frame.pack(); // pack makes the window big enough for fitting all the elements.
+
+        frame.add(panel1, BorderLayout.CENTER); // add the panel1 to the frame.
 
 
 
+        JPanel panel2 = new JPanel();
         showMenu();
-        panel.add(menuBar);
-        add(panel);
+
     }
     public void showMenu(){
         menuBar = new JMenuBar();
-        menu = new JMenu("Choose a valid option: ");
-        option1 = new JMenuItem("Centimeters to meters");
-        option2 = new JMenuItem("Meters to centimeters");
-        option3 = new JMenuItem("EXIT");
+        JMenu menu = new JMenu("Distance: ");
+        //make an array list with the options!!
+        JMenuItem option1 = new JMenuItem("Centimeters to meters");
+        JMenuItem option2 = new JMenuItem("Meters to centimeters");
+        JMenuItem option3 = new JMenuItem("EXIT");
 
         menu.add(option1);
         menu.add(option2);
@@ -53,9 +53,9 @@ public class ConverterGui extends JFrame {
     }
 
     public static void main(String[] args) {
+//        SwingUtilities.invokeLater(ConverterGui::new);
         ConverterGui window = new ConverterGui();
-        
-
+             
 
  
     }
